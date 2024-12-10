@@ -199,7 +199,7 @@ function checkForCompletion() {
 
     const remainingPercentage = (remainingPixels / totalPixels) * 100;
 
-    if (remainingPercentage <= 1.5) { // If only 1-1.5% of the content remains
+    if (remainingPercentage <= 0.06) { // If only 1-1.5% of the content remains
         resetButton.style.display = 'block'; // Show the reset button
     }
 }
