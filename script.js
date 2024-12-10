@@ -5,7 +5,7 @@ const resetButton = document.getElementById('reset-button');
 
 // Dragon image source
 const dragonImage = new Image();
-dragonImage.src = 'dragon.png'; // Path to the uploaded dragon image
+dragonImage.src = '/mnt/data/image.png'; // Path to the uploaded dragon image
 
 // Function to resize canvas to fit the device screen
 function resizeCanvas() {
@@ -86,7 +86,15 @@ function generateDoodles() {
     doodles = [];
     const numDoodles = Math.floor((canvas.width * canvas.height) / 2000); // High density of doodles
     for (let i = 0; i < numDoodles; i++) {
-        const type = ['circle', 'line', 'rectangle', 'text', 'dragon', 'money'][Math.floor(Math.random() * 6)];
+        // Randomize type, reducing money probability
+        const randomType = Math.random();
+        let type;
+        if (randomType < 0.15) { // 15% chance for money phrases
+            type = 'money';
+        } else {
+            type = ['circle', 'line', 'rectangle', 'text', 'dragon'][Math.floor(Math.random() * 5)];
+        }
+
         doodles.push({
             type,
             x: Math.random() * canvas.width,
