@@ -5,7 +5,7 @@ const resetButton = document.getElementById('reset-button');
 
 // Dragon image source
 const dragonImage = new Image();
-dragonImage.src = '/mnt/data/image.png'; // Path to the uploaded dragon image
+dragonImage.src = 'dragon.png'; // Path to the uploaded dragon image
 
 // Function to resize canvas to fit the device screen
 function resizeCanvas() {
